@@ -1,2 +1,11 @@
-# file-organizer-python
-A Python script that automatically organizes files in a folder by type, for example moving images, documents, and videos into separate subfolders. The project helps keep directories clean and demonstrates file handling, automation, and basic scripting skills.
+# File Organizer Script
+This project is a simple Python tool that organizes files in a selected folder by their type.
+## Features
+- Sorts files into folders such as Images, Documents, Videos, and Others
+- Helps keep directories clean and structured
+- Easy to modify and extend
+## Technologies
+- Python
+- OS and file handling modules
+## Purpose
+I created this project to improve my Python skills and learn more about automation and file management
