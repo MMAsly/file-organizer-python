@@ -1,37 +1,16 @@
-import os
-import shutil
+# File Organizer Script
 
-FILE_CATEGORIES = {
-    "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg"],
-    "Documents": [".pdf", ".doc", ".docx", ".txt", ".ppt", ".pptx", ".xls", ".xlsx"],
-    "Videos": [".mp4", ".mkv", ".avi", ".mov"],
-    "Music": [".mp3", ".wav", ".aac"],
-    "Archives": [".zip", ".rar", ".7z", ".tar", ".gz"]
-}
+This project is a simple Python tool that organizes files in a selected folder by their type.
 
-def get_category(extension):
-    for category, extensions in FILE_CATEGORIES.items():
-        if extension.lower() in extensions:
-            return category
-    return "Others"
+## Features
+- Sorts files into folders such as Images, Documents, Videos, and Others
+- Helps keep directories clean and structured
+- Easy to modify and extend
 
-def organize_folder(folder_path):
-    if not os.path.exists(folder_path):
-        print("Folder does not exist.")
-        return
+## Technologies
+- Python
+- OS and file handling modules
 
-    for filename in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, filename)
+## Purpose
+I created this project to improve my Python skills and learn more about automation and file management.
 
-        if os.path.isfile(file_path):
-            _, extension = os.path.splitext(filename)
-            category = get_category(extension)
-            category_folder = os.path.join(folder_path, category)
-
-            os.makedirs(category_folder, exist_ok=True)
-            shutil.move(file_path, os.path.join(category_folder, filename))
-            print(f"Moved: {filename} -> {category}/")
-
-if __name__ == "__main__":
-    folder = input("Enter the folder path to organize: ").strip()
-    organize_folder(folder)
